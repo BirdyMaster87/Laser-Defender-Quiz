@@ -6,15 +6,11 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] float fireRate = 1f;
 
     void Start()
     {
-        InvokeRepeating(nameof(EnemyFire), 0.5f, 0.5f);
-    }
-
-    void Update()
-    {
-        
+        InvokeRepeating(nameof(EnemyFire), fireRate, fireRate);
     }
 
     private void EnemyFire()
